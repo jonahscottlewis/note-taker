@@ -1,3 +1,19 @@
+# Note Taker
+
+## Description
+
+Note taker is an application that the user can save personal notes with. Notes can be written, saved and then deleted when or if desired.
+
+## Dependencies
+
+Express
+UUID
+
+## GitHub URL 
+
+https://github.com/jonahscottlewis/note-taker-11
+
+
 # 11 Express.js: Note Taker
 
 ## Your Task
