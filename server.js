@@ -7,6 +7,11 @@ const uuid = require("uuid");
 const app = express();
 const PORT = 3001;
 
+//middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
+
 //saves notes and adds to db.json
 app.get("/api/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "./Develop/db/db.json"))
