@@ -27,6 +27,17 @@ app.post("/api/notes", (req,res) => {
     res.json(notes);
 })
 
-app.listen(PORT, () =>
-  console.log(`App listening at http://localhost:${PORT} 🚀`)
-);
+// calling notes.html
+app.get('/notes', (req, res) => {
+  res.sendFile(path.join(__dirname,'./Develop/public/notes.html' ));
+});
+
+//calling index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './Develop/public/index.html'));
+});
+
+
+app.listen(PORT, () => {
+  console.log(`App listening at http://localhost:${PORT}`);
+});
