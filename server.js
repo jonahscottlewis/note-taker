@@ -10,7 +10,7 @@ const PORT = 3001;
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname,'./Develop/public')));
 
 //saves notes and adds to db.json
 app.get("/api/notes", (req, res) => {
@@ -33,7 +33,7 @@ app.get('/notes', (req, res) => {
 });
 
 //calling index.html
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './Develop/public/index.html'));
 });
 
