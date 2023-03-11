@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const notes = require("./Develop/db/db.json")
 const path = require("path");
+// require uud to add unique id to each json item
 const uuid = require("uuid");
 
 const app = express();
@@ -21,12 +22,14 @@ app.get("/api/notes", (req, res) => {
 app.post("/api/notes", (req,res) => {
     const notes = JSON.parse(fs.readFileSync("./Develop/db/db.json"));
     const newNotes = req.body;
+    //using uud for unique identifier for each json item
     newNotes.id = uuid.v4();
     notes.push(newNotes);
     fs.writeFileSync("./Develop/db/db.json", JSON.stringify(notes));
     res.json(notes);
 })
 
+// function to delete saved notes
 app.delete("/api/notes/:id", (req, res) => {
   const notes = JSON.parse(fs.readFileSync("./Develop/db/db.json"));
   const delNote = notes.filter((rmvNote) => rmvNote.id !== req.params.id);
