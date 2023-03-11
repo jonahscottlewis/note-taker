@@ -14,4 +14,4 @@ UUID
 https://github.com/jonahscottlewis/note-taker-11
 
 ## Heroku URL
-https://git.heroku.com/glacial-anchorage-42538.git
+https://glacial-anchorage-42538.herokuapp.com/
